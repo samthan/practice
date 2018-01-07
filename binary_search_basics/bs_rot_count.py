@@ -52,6 +52,8 @@ def count_rotation_2(arr):
 a = [5, 6, 7, 8, 1, 2, 3, 4]
 b = [0, 1, 2, 3, 4, 5, 6, 7]
 c = [8, 9, 10, 11, 2, 3, 4, 5]
+d = [7, 7, 8, 9, 1, 2, 3, 4]
+e = [5, 6, 7, 8, 1, 1, 1, 1]
 
 # print count_rotation(a)
 # print count_rotation(b)
@@ -60,6 +62,9 @@ c = [8, 9, 10, 11, 2, 3, 4, 5]
 print count_rotation_2(a)
 print count_rotation_2(b)
 print count_rotation_2(c)
+print count_rotation_2(d)
+print count_rotation_2(e)
+
 
 
 
