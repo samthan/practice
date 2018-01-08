@@ -1,4 +1,5 @@
 from array import *
+from node import Node
 
 # stack implementation with list...kind of cheating
 # stack supports 4 basic operations and is Last In First Out
@@ -73,29 +74,77 @@ class ArrayStack:
 			if i is not None:
 				print i
 
+class LinkedStack:
 
-a = ArrayStack()
-for i in range(6):
-	a.add(i)
+	def __init__(self):
+		self.top = None
 
-# print a.peek()
-a.show()
-print "-------"
-a.remove()
-print a.peek()
-a.show()
-# s = Stack()
+	def peek(self):
+		return self.top
 
+	def add(self, data):
+		n = Node(data)
+
+		n.next = self.top
+		self.top = n
+
+	def remove(self):
+		tmp = self.top
+		self.top = self.top.next
+
+		return tmp
+
+	def empty(self):
+		return self.top is None
+
+	def show(self):
+		tmp = self.top
+
+		while tmp:
+			print tmp
+			tmp = tmp.next
+
+l = LinkedStack()
 for i in range(5):
-	a.remove()
+	l.add(i)
 
-print a.peek()
-print a.empty()
+l.show()
 
-# print s.empty()
+print "peeking", l.peek()
 
-# for i in range(10):
-# 	s.add(i)
+for i in range(3):
+	l.remove()
+
+print "peek", l.peek()
+
+print l.remove()
+print l.remove()
+
+print l.peek()
+
+
+# a = ArrayStack()
+# for i in range(6):
+# 	a.add(i)
+
+# # print a.peek()
+# a.show()
+# print "-------"
+# a.remove()
+# print a.peek()
+# a.show()
+# # s = Stack()
 
 # for i in range(5):
-# 	s.remove()
+# 	a.remove()
+
+# print a.peek()
+# print a.empty()
+
+# # print s.empty()
+
+# # for i in range(10):
+# # 	s.add(i)
+
+# # for i in range(5):
+# # 	s.remove()
