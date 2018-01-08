@@ -31,17 +31,36 @@ def reverse_linked(head):
 
 	return ans
 
+def balanced_parens(arr):
+	l = []
+
+	for i in range(len(arr)):
+		if arr[i] == '(':
+			l.append(arr[i])
+		else:
+			if not len(l):
+				return False
+			l.pop()
+
+	return True if len(l) == 0 else False
+
+
+print balanced_parens("((((((((((")
+print balanced_parens("((()))")
+print balanced_parens("(()())")
+print balanced_parens("()()()()()()")
+
 # print reverse("GeeksForGeeks")
 # print reverse('abcdefghijklmnopqrstuvwxyz')
 
-n = Node(0)
-a = n
-for i in range(1, 10):
-	tmp = Node(i)
-	n.next = tmp
-	n = n.next
+# n = Node(0)
+# a = n
+# for i in range(1, 10):
+# 	tmp = Node(i)
+# 	n.next = tmp
+# 	n = n.next
 
-a = reverse_linked(a)
-while a:
-	print a
-	a = a.next
+# a = reverse_linked(a)
+# while a:
+# 	print a
+# 	a = a.next
